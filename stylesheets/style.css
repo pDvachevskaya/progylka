@@ -1,0 +1,293 @@
+/* ==========================
+   FONT
+========================== */
+
+@font-face {
+    font-family: "BM431";
+    src: url("../fonts/BM431 ITALIC.TTF") format("truetype");
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* ==========================
+   VARIABLES
+========================== */
+
+:root {
+    --background: #ffffff;
+    --red: #FF0000;
+    --black: #000000;
+}
+
+/* ==========================
+   GLOBAL
+========================== */
+
+* {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+}
+
+body {
+    min-height: 100vh;
+
+    background: var(--background);
+
+    font-family: "BM431", serif;
+
+    overflow: hidden;
+}
+
+/* ==========================
+   NAVBAR
+========================== */
+
+/* ==========================
+   NAVBAR
+========================== */
+
+.navbar {
+
+    margin-left: 1.3vw;
+    margin-right: 0px;
+
+    padding-top: 1.3vw;
+    padding-bottom: 1vw;
+
+    border-bottom: 2px solid var(--red);
+
+    display: flex;
+    align-items: center;
+}
+
+.archive {
+    color: var(--red);
+
+    font-size: 1.2vw;
+
+    text-decoration: none;
+}
+
+.archive:visited,
+.archive:hover,
+.archive:active {
+    color: var(--red);
+
+    text-decoration: none;
+}
+
+/* ==========================
+   MAIN
+========================== */
+
+.main {
+    width: 100%;
+
+    height: calc(100vh - 90px);
+
+    position: relative;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* ==========================
+   MAP CONTAINER
+========================== */
+
+.map-container {
+    position: relative;
+
+    width: 969px;
+    height: 693px;
+
+    transform: scale(0.8);
+
+    transform-origin: center center;
+}
+
+/* ==========================
+   MAP
+========================== */
+
+.map {
+    position: absolute;
+
+    top: 0;
+    left: 0;
+
+    width: 969px;
+    height: 693px;
+
+    z-index: 60;
+
+    pointer-events: none;
+}
+
+/* ==========================
+   IMAGES LAYER
+========================== */
+
+#images-layer {
+    position: absolute;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+
+    z-index: 50;
+}
+
+/* ==========================
+   MARKERS LAYER
+========================== */
+
+#markers-layer {
+    position: absolute;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+
+    z-index: 70;
+}
+
+/* ==========================
+   CAPTIONS LAYER
+========================== */
+
+#captions-layer {
+    position: absolute;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+
+    z-index: 100;
+
+    pointer-events: none;
+}
+
+/* ==========================
+   MARKER
+========================== */
+
+.marker {
+    position: absolute;
+
+    width: 18px;
+    height: 18px;
+
+    background: var(--red);
+
+    opacity: 0;
+
+    cursor: pointer;
+
+    transition: opacity .12s linear;
+}
+
+.marker.discovered {
+    opacity: 1;
+}
+
+/* ==========================
+   IMAGE
+========================== */
+
+.archive-image {
+    position: absolute;
+
+    display: block;
+}
+
+/* ==========================
+   CAPTION
+========================== */
+
+.archive-caption {
+
+    position: absolute;
+
+    z-index: 100;
+
+    color: var(--black);
+
+    font-size: 1.2vw;
+
+    line-height: 0.9;
+
+    text-align: left;
+
+    white-space: pre-line;
+}
+
+/* ==========================
+   AUDIO
+========================== */
+
+.audio-container {
+    position: fixed;
+
+    left: 50%;
+    bottom: 30px;
+
+    transform: translateX(-50%);
+
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    z-index: 200;
+}
+
+#audio-player {
+    display: none;
+
+    width: 440px;
+    height: 40px;
+
+    background: transparent;
+
+    border: 2px solid #000000;
+    border-radius: 40px;
+
+    padding: 0;
+}
+
+/* Панель Chrome */
+
+#audio-player::-webkit-media-controls-panel {
+    background: transparent;
+}
+
+/* Внешний контейнер */
+
+#audio-player::-webkit-media-controls-enclosure {
+    background: transparent;
+
+    border: none;
+
+    border-radius: 40px;
+}
+
+/* ==========================
+   HELPERS
+========================== */
+
+.hidden {
+    display: none;
+}
